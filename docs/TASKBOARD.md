@@ -4,12 +4,15 @@ Each agent updates ONLY its own rows. Status: `TODO` | `DOING` | `DONE` | `BLOCK
 Read this before claiming work; don't touch another agent's files without coordinating via this board.
 
 ## Pane 0 — Orchestrator
-- [ ] TODO  Scaffold Next.js (App Router, TS, Tailwind) into repo root
-- [ ] TODO  Install framer-motion, lenis, theme deps
-- [ ] TODO  Wire ThemeProvider + dark/light default
-- [ ] TODO  Integrate sections into app/page.tsx
-- [ ] TODO  Review build against BRAND.md + SPEC.md
-- [ ] TODO  Commit + push to GitHub remote
+- [x] DONE  Scaffold Next.js (App Router, TS, Tailwind v4, src/, @/*) into repo root
+- [x] DONE  Install framer-motion, lenis, next-themes, clsx
+- [x] DONE  Wire ThemeProvider (next-themes, class strategy, default dark) + baseline tokens in globals.css
+- [ ] DOING  Integrate sections into app/page.tsx (waiting on pane 4 components)
+- [ ] DOING  Review build against BRAND.md + SPEC.md (continuous)
+- [ ] DOING  Commit + push to GitHub remote (scaffold pushed; will push integrations)
+
+> Note: baseline globals.css holds the BRAND token system + `dark` class variant so the
+> theme toggle works. Pane 2 owns/extends this file. `npm run build` passes on the shell.
 
 ## Pane 1 — Vault-Researcher
 - [ ] TODO  Read vault (priority files in AGENTS.md)
