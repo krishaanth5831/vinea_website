@@ -1,0 +1,12 @@
+{
+  "_note": "Source of truth for all site copy. WRITTEN BY THE VAULT-RESEARCHER AGENT from the Obsidian vault. UI agents read from here and must not invent content. Every stat needs a 'source'. Unconfirmed -> 'TODO:VERIFY'. This file is a placeholder schema; the researcher fills it.",
+  "hero": { "eyebrow": "", "heading": "", "body": "", "cta": { "label": "", "href": "" } },
+  "problem": { "eyebrow": "", "heading": "", "body": "", "bullets": [], "stats": [] },
+  "product": { "eyebrow": "", "heading": "", "body": "", "modules": [] },
+  "capabilities": { "eyebrow": "", "heading": "", "bullets": [] },
+  "raas": { "eyebrow": "", "heading": "", "body": "", "tiers": [] },
+  "market": { "eyebrow": "", "heading": "", "body": "", "stats": [] },
+  "roadmap": { "eyebrow": "", "heading": "", "milestones": [] },
+  "about": { "eyebrow": "", "heading": "", "body": "" },
+  "contact": { "eyebrow": "", "heading": "", "body": "", "cta": { "label": "", "href": "" } }
+}
