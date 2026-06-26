@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+/*
+ * Vinea design system — monochrome layout, color only in motion (BRAND.md).
+ * Pane 2 (Design-System) owns this file: theme tokens, type scale, spacing
+ * rhythm, base resets, and the motion-accent palette (for the motion agent
+ * to use ONLY inside animations — never on static UI).
+ *
+ * Dark is the default theme; next-themes toggles the `.dark` class on <html>.
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* ---- Theme tokens: LIGHT ---- */
+  --bg: #fafaf8;
+  --bg-elev: #ffffff;
+  --fg: #0a0a0a;
+  --fg-muted: #52525b;
+  --border: #e4e4e7;
+
+  /* ---- Motion-only accent palette (animations ONLY) ---- */
+  --motion-1: #00e5a0; /* electric green — Vinea/greenhouse */
+  --motion-2: #5b8cff; /* cobalt */
+  --motion-3: #ff5c38; /* warm coral, sparingly */
+
+  /* ---- Spacing: 8px grid ---- */
+  --space-section: clamp(120px, 14vw, 200px); /* vertical rhythm between sections */
+  --container-max: 1200px;
+  --container-gutter: clamp(1.25rem, 5vw, 3rem);
+}
+
+.dark {
+  /* ---- Theme tokens: DARK (default) ---- */
+  --bg: #0a0a0a;
+  --bg-elev: #141414;
+  --fg: #fafafa;
+  --fg-muted: #a1a1aa;
+  --border: #262626;
+}
+
+@theme inline {
+  /* Colors — monochrome surface tokens */
+  --color-bg: var(--bg);
+  --color-bg-elev: var(--bg-elev);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-border: var(--border);
+
+  /* Motion-accent — exposed for the motion agent (animations only) */
+  --color-motion-1: var(--motion-1);
+  --color-motion-2: var(--motion-2);
+  --color-motion-3: var(--motion-3);
+
+  /* Fonts (wired in layout.tsx by pane 0) */
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Layout */
+  --spacing-section: var(--space-section);
+  --container-max: var(--container-max);
+
+  /* ---- Type scale (fluid, grotesk display) ---- */
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.16em;
+
+  --text-display: clamp(2.75rem, 7vw, 5.5rem);
+  --text-display--line-height: 0.98;
+  --text-display--letter-spacing: -0.035em;
+
+  --text-h1: clamp(2.25rem, 5vw, 4rem);
+  --text-h1--line-height: 1.02;
+  --text-h1--letter-spacing: -0.03em;
+
+  --text-h2: clamp(1.75rem, 3.5vw, 2.75rem);
+  --text-h2--line-height: 1.08;
+  --text-h2--letter-spacing: -0.025em;
+
+  --text-h3: clamp(1.25rem, 2vw, 1.625rem);
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.02em;
+
+  --text-lead: clamp(1.125rem, 1.4vw, 1.375rem);
+  --text-lead--line-height: 1.5;
+
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.6;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+}
+
+/* ----------------------------------------------------------------------- *
+ * Base resets & element defaults
+ * ----------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth; /* Lenis (pane 3) overrides; this is the graceful fallback */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--text-body);
+  line-height: 1.6;
+  font-feature-settings: "ss01", "cv01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 2px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Thin, theme-aware default border color */
+* {
+  border-color: var(--border);
+}
+
+/* ----------------------------------------------------------------------- *
+ * Typographic utility classes (composable by panes 3 & 4)
+ * ----------------------------------------------------------------------- */
+@layer components {
+  .text-eyebrow {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: var(--text-eyebrow);
+    line-height: var(--text-eyebrow--line-height);
+    letter-spacing: var(--text-eyebrow--letter-spacing);
+    text-transform: uppercase;
+    color: var(--fg-muted);
+  }
+
+  .text-display {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-size: var(--text-display);
+    line-height: var(--text-display--line-height);
+    letter-spacing: var(--text-display--letter-spacing);
+    font-weight: 600;
+  }
+}
