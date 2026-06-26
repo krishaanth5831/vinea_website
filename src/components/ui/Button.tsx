@@ -23,8 +23,8 @@ const base =
   "disabled:pointer-events-none disabled:opacity-50";
 
 const variants: Record<Variant, string> = {
-  solid: "border-fg bg-fg text-bg hover:bg-fg-muted hover:border-fg-muted",
-  outline: "border-fg bg-bg-elev text-fg hover:bg-fg hover:text-bg hover:border-fg",
+  solid: "border-fg bg-fg [color:var(--bg)] hover:bg-fg-muted hover:border-fg-muted",
+  outline: "border-fg bg-bg-elev text-fg hover:bg-fg hover:border-fg hover:[color:var(--bg)]",
   ghost: "border-transparent bg-transparent text-fg hover:bg-bg-elev",
 };
 
