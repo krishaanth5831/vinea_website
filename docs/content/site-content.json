@@ -88,13 +88,15 @@
   "about": {
     "eyebrow": "Who's building this",
     "heading": "Founder-led, obsession over credentials.",
-    "body": "Vinea is being built from an EE/hardware foundation and a decade-long pull toward agricultural robotics. The plan is honest: build a small cross-faculty team to prove something real, then bring in deeper greenhouse and robotics expertise. Cofounder search is active — the filter is obsession, not titles.",
+    "founder": { "name": "Krishaanth Ramaraj", "role": "Founder" },
+    "body": "Vinea is being built by Krishaanth Ramaraj, from an EE/hardware foundation and a decade-long pull toward agricultural robotics. The plan is honest: build a small cross-faculty team to prove something real, then bring in deeper greenhouse and robotics expertise. Cofounder search is active — the filter is obsession, not titles.",
     "source": "Pillar 9 — Why You"
   },
   "contact": {
     "eyebrow": "Get in touch",
     "heading": "See it pick.",
     "body": "If you run a greenhouse, want to partner, or want to build this — reach out.",
-    "cta": { "label": "Request a demo", "href": "mailto:TODO:VERIFY" }
+    "cta": { "label": "Request a demo", "href": "mailto:krishaanth@getvinea.nl" },
+    "email": "krishaanth@getvinea.nl"
   }
 }
