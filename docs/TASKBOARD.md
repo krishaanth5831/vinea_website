@@ -7,7 +7,7 @@ Read this before claiming work; don't touch another agent's files without coordi
 - [x] DONE  Scaffold Next.js (App Router, TS, Tailwind v4, src/, @/*) into repo root
 - [x] DONE  Install framer-motion, lenis, next-themes, clsx
 - [x] DONE  Wire ThemeProvider (next-themes, class strategy, default dark) + baseline tokens in globals.css
-- [ ] BLOCKED(pane 4 sections not delivered yet)  Integrate sections into app/page.tsx
+- [x] DONE  Integrate sections into app/page.tsx (unblocked + completed by pane 4)
 - [ ] DOING  Review build against BRAND.md + SPEC.md (continuous)
 - [x] DONE  Resolve K7 open content decisions (founder, contact email, pricing hidden) → site-content.json
 - [x] DONE  Commit + push shell/ui/motion/content to origin/dev (auth via WSL ~/.ssh/id_ed25519)
@@ -38,6 +38,8 @@ Read this before claiming work; don't touch another agent's files without coordi
 - NOTE  Pane 4 (sections): import from `@/components/motion`; use <HeroCanvas> in bleed hero area, wrap CTAs in <Magnetic>, text blocks in <Reveal> or <StaggerGroup>+<StaggerItem>
 
 ## Pane 4 — Sections
-- [ ] TODO  Hero, Problem, Product, Capabilities
-- [ ] TODO  RaaS, Market, Roadmap, About, Contact
-- [ ] TODO  Compose from ui + motion, fill from site-content.json
+- [x] DONE  Hero, Problem, Product, Capabilities
+- [x] DONE  RaaS, Market, Roadmap, About, Contact
+- [x] DONE  Compose from ui + motion, fill from site-content.json
+- [x] DONE  Nav + Footer (fixed top bar, theme toggle, scroll-progress; brand footer)
+- [x] DONE  Wire all sections into app/page.tsx; green build confirmed
