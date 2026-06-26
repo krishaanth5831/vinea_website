@@ -1,12 +1,100 @@
 {
-  "_note": "Source of truth for all site copy. WRITTEN BY THE VAULT-RESEARCHER AGENT from the Obsidian vault. UI agents read from here and must not invent content. Every stat needs a 'source'. Unconfirmed -> 'TODO:VERIFY'. This file is a placeholder schema; the researcher fills it.",
-  "hero": { "eyebrow": "", "heading": "", "body": "", "cta": { "label": "", "href": "" } },
-  "problem": { "eyebrow": "", "heading": "", "body": "", "bullets": [], "stats": [] },
-  "product": { "eyebrow": "", "heading": "", "body": "", "modules": [] },
-  "capabilities": { "eyebrow": "", "heading": "", "bullets": [] },
-  "raas": { "eyebrow": "", "heading": "", "body": "", "tiers": [] },
-  "market": { "eyebrow": "", "heading": "", "body": "", "stats": [] },
-  "roadmap": { "eyebrow": "", "heading": "", "milestones": [] },
-  "about": { "eyebrow": "", "heading": "", "body": "" },
-  "contact": { "eyebrow": "", "heading": "", "body": "", "cta": { "label": "", "href": "" } }
+  "_note": "Source of truth for site copy, seeded from the Vinea Obsidian vault. Stats carry sources. The Vault-Researcher agent may extend/refine this.",
+  "brand": {
+    "name": "Vinea",
+    "tagline": "Autonomous harvesting for the greenhouses you already have.",
+    "oneLiner": "A modular autonomous robot that harvests and scouts inside existing Dutch commercial greenhouses — no infrastructure rebuild — sold as a monthly service that gets harder to leave every season it runs.",
+    "source": "Idea Anatomy — Full Compilation: One-Line Pitch"
+  },
+  "hero": {
+    "eyebrow": "Greenhouse robotics, as a service",
+    "heading": "Autonomous harvesting for the greenhouses you already have.",
+    "body": "Vinea is a modular robot that harvests and scouts inside existing commercial greenhouses — no rebuild, no capex. Deployed as a monthly service that costs less than the labour it replaces from month one.",
+    "cta": { "label": "Request a demo", "href": "#contact" },
+    "source": "Compilation: One-Line Pitch + Business Model"
+  },
+  "problem": {
+    "eyebrow": "The problem",
+    "heading": "Greenhouses are running out of hands.",
+    "body": "Dutch tomato, cucumber, and pepper operators spend roughly €1.6M a year per 5-hectare site on manual harvesting and scouting — at the exact moment seasonal labour is structurally disappearing. The only funded robot on the market requires rebuilding the greenhouse, leaving ~95% of operators with no option that fits their existing infrastructure.",
+    "bullets": [
+      "~8 workers per hectare, ~€38,200 per worker per year",
+      "Reports of up to 75% less available greenhouse labour",
+      "No automation that works in existing greenhouse infrastructure"
+    ],
+    "stats": [
+      { "value": "€1.6M", "label": "annual harvest + scouting labour per 5-ha site", "source": "Pillar 1 — Problem" },
+      { "value": "~95%", "label": "of the market unserved by rebuild-required robots", "source": "Pillar 1 — Problem" },
+      { "value": "75%", "label": "reported drop in available greenhouse labour", "source": "Pillar 1 — Problem" }
+    ]
+  },
+  "product": {
+    "eyebrow": "The platform",
+    "heading": "One base. Swappable modules. Works in your rows today.",
+    "body": "A single configurable robot base accepts interchangeable modules. Same chassis, compute, and navigation across every customer — only the gripper, row-width adapter, and licensed modules change. It scales like a product line, not bespoke builds.",
+    "modules": [
+      { "name": "Harvest", "desc": "Autonomous picking and de-leafing. Computer-vision-guided, with crop-specific soft grippers — tomato first." },
+      { "name": "Scout", "desc": "Daily inspection passes that flag disease and pests 3–5 days before visible symptoms, with grower-dashboard alerts." }
+    ],
+    "source": "Pillar 5 — Solution + MVP Hardware Concept v1"
+  },
+  "capabilities": {
+    "eyebrow": "How it works",
+    "heading": "Off-the-shelf vision, purpose-built where it counts.",
+    "bullets": [
+      "6-DOF arm with a soft, adaptive gripper that warps to fruit shape to prevent bruising",
+      "Coarse-to-fine vision: a plant-wide camera locates fruit, an eye-in-hand camera verifies ripeness before picking",
+      "Runs inside existing greenhouse row infrastructure — no rebuild required",
+      "Every deployment improves the shared model: the product gets better each season"
+    ],
+    "source": "MVP Hardware Concept v1 + Pillar 8 — Moat"
+  },
+  "raas": {
+    "eyebrow": "The model",
+    "heading": "Robotics as a service. Priced against a wage.",
+    "body": "No upfront purchase. Hardware, software, maintenance, and data in one monthly subscription with a 12-month minimum. It turns a multi-hundred-thousand-euro capex decision into an opex line directly comparable to a worker's wage.",
+    "publishPricing": false,
+    "tiers": [
+      { "name": "Harvest", "price": "€4,500 / robot / month", "includes": "Picking + de-leafing" },
+      { "name": "Harvest + Scout", "price": "€5,800 / robot / month", "includes": "+ scouting + grower dashboard", "featured": true },
+      { "name": "Full Analytics", "price": "€6,500 / robot / month", "includes": "+ yield forecasting + agronomist insights" }
+    ],
+    "stats": [
+      { "value": "€4,300–7,600", "label": "net monthly saving per robot vs. the labour it replaces", "source": "Pillar 7 — Unit Economics" }
+    ],
+    "source": "Pillar 6 — Business Model + Pillar 7"
+  },
+  "market": {
+    "eyebrow": "Why now",
+    "heading": "2026 is the dawn of horticultural robotics.",
+    "body": "Collapsing seasonal labour, a 70%+ fall in vision-sensor costs since 2020, a €10M raise by the first funded competitor, and hundreds of millions in Dutch agricultural-innovation funding have converged. The technology that wasn't buildable by a small team in 2020 is buildable in 2026.",
+    "stats": [
+      { "value": "€167–223M", "label": "serviceable Dutch market at full penetration (~587 farms)", "source": "Pillar 4 — Market Size" },
+      { "value": "~$2.3–3.1B", "label": "global harvesting/scouting robotics market by 2033", "source": "Pillar 4 — Market Size" },
+      { "value": "LiDAR <$1k", "label": "down from ~$10k (2020–2024)", "source": "Pillar 3 — Why Now" }
+    ]
+  },
+  "roadmap": {
+    "eyebrow": "Where we're going",
+    "heading": "Prove the pick, then earn the channel.",
+    "milestones": [
+      { "phase": "Now", "title": "Validation", "desc": "Talk to real Dutch growers; confirm the pain before building." },
+      { "phase": "Next", "title": "Prototype the core bet", "desc": "Reliable, bruise-free autonomous tomato picking at commercial throughput — the one number everything depends on." },
+      { "phase": "Then", "title": "Direct pilot", "desc": "First reference deployment in Westland / Lansingerland." },
+      { "phase": "Later", "title": "Channel + expand", "desc": "Partner with established horticulture suppliers; expand toward Belgium and Spain." }
+    ],
+    "source": "Compilation: GTM sequencing + Locked vs Open"
+  },
+  "about": {
+    "eyebrow": "Who's building this",
+    "heading": "Founder-led, obsession over credentials.",
+    "body": "Vinea is being built from an EE/hardware foundation and a decade-long pull toward agricultural robotics. The plan is honest: build a small cross-faculty team to prove something real, then bring in deeper greenhouse and robotics expertise. Cofounder search is active — the filter is obsession, not titles.",
+    "source": "Pillar 9 — Why You"
+  },
+  "contact": {
+    "eyebrow": "Get in touch",
+    "heading": "See it pick.",
+    "body": "If you run a greenhouse, want to partner, or want to build this — reach out.",
+    "cta": { "label": "Request a demo", "href": "mailto:TODO:VERIFY" }
+  }
 }
