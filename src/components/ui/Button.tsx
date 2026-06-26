@@ -24,7 +24,7 @@ const base =
 
 const variants: Record<Variant, string> = {
   solid: "border-fg bg-fg text-bg hover:bg-fg-muted hover:border-fg-muted",
-  outline: "border-border bg-transparent text-fg hover:border-fg",
+  outline: "border-fg-muted bg-transparent text-fg hover:border-fg",
   ghost: "border-transparent bg-transparent text-fg hover:bg-bg-elev",
 };
 

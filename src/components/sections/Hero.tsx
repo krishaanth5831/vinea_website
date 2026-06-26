@@ -17,7 +17,7 @@ export function Hero() {
       <HeroCanvas className="absolute inset-0 -z-10" />
 
       <div className="mx-auto w-full max-w-[var(--container-max)] px-[var(--container-gutter)]">
-        <Reveal as="p" delay={0}>
+        <Reveal delay={0}>
           <Eyebrow>{hero.eyebrow}</Eyebrow>
         </Reveal>
         <Reveal as="h1" delay={0.08} mask className="text-display mt-6 max-w-3xl">
