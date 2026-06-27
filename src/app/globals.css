@@ -146,14 +146,25 @@ p {
   outline-offset: 2px;
 }
 
-/* Layered into `base` so text-color utilities (text-bg, text-fg, …) win over
- * it — otherwise an unlayered `a` rule beats every utility layer, making
- * `<Button as="a">` ignore its variant text color (e.g. solid → invisible). */
+/* Anchors inherit their colour by default (base layer). BUT Tailwind's Preflight
+ * ships an UNLAYERED `a { color: inherit }`, and an unlayered rule beats every
+ * layered utility regardless of specificity (cascade layers lose to unlayered
+ * styles). Without the override below, colour utilities on <a> are silently
+ * ignored — text-fg-muted on nav/footer links renders as fg, and text-bg on the
+ * solid <Button as="a"> renders as fg too, i.e. white text on a white pill.
+ *
+ * The unlayered `a { color: revert-layer }` defeats Preflight's unlayered rule
+ * (same specificity, later source order) and `revert-layer` re-defers anchors to
+ * the layer cascade — so a text-colour utility wins when present, otherwise it
+ * falls back to the base-layer `inherit`. */
 @layer base {
   a {
     color: inherit;
     text-decoration: none;
   }
+}
+a {
+  color: revert-layer;
 }
 
 /* Thin, theme-aware default border color */

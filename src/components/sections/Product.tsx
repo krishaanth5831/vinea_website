@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Section, Eyebrow, Button } from "@/components/ui";
-import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion";
+import { Section, Eyebrow } from "@/components/ui";
+import { Reveal, StaggerGroup, StaggerItem, AsciiField } from "@/components/motion";
 import content from "../../lib/content";
 
 const { product } = content;
@@ -26,36 +26,21 @@ export function Product() {
 
       {/* Module diagram + switcher */}
       <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:items-center">
-        {/* Animated module panel */}
+        {/* Animated module panel — ASCII-art illustration that morphs per module */}
         <div className="relative flex h-64 items-center justify-center overflow-hidden rounded-lg border border-border bg-bg-elev">
-          {/* Robot base — always present */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-0">
-            <div className="h-20 w-28 rounded-t-md border border-border bg-bg" />
-            <div className="h-4 w-36 rounded-b-md border border-border bg-bg" />
-          </div>
-          {/* Swappable module on top with animated presence */}
+          <AsciiField variant={active === 0 ? "cloud" : "scan"} />
+          {/* Current module label */}
           <AnimatePresence mode="wait">
-            <motion.div
+            <motion.span
               key={active}
-              initial={{ opacity: 0, y: -16 }}
+              initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 16 }}
-              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-8 left-1/2 -translate-x-1/2 flex flex-col items-center"
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="pointer-events-none absolute bottom-4 left-4 font-mono text-xs uppercase tracking-[0.2em] text-fg-muted"
             >
-              <div
-                className="flex h-16 w-24 items-center justify-center rounded-md border border-border bg-bg-elev"
-                style={{
-                  boxShadow: `0 0 24px 2px ${active === 0 ? "var(--motion-1)" : "var(--motion-2)"}40`,
-                }}
-              >
-                <span className="font-mono text-xs uppercase tracking-[0.1em]">{mod.name}</span>
-              </div>
-              <div
-                className="h-4 w-0.5"
-                style={{ background: active === 0 ? "var(--motion-1)" : "var(--motion-2)" }}
-              />
-            </motion.div>
+              {mod.name}
+            </motion.span>
           </AnimatePresence>
         </div>
 

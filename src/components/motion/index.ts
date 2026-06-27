@@ -14,3 +14,4 @@ export { Cursor } from "./Cursor";
 export { HeroCanvas } from "./HeroCanvas";
 export { Scramble } from "./Scramble";
 export { Marquee } from "./Marquee";
+export { AsciiField } from "./AsciiField";
