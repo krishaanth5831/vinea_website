@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@/components/ui";
+import { Button, Logo } from "@/components/ui";
 import { Magnetic } from "@/components/motion";
 import { ThemeToggle } from "@/components/ui";
 
@@ -17,8 +17,8 @@ export function Nav() {
     <>
       <header className="fixed top-0 inset-x-0 z-50 border-b border-border bg-bg/80 backdrop-blur-md">
         <div className="mx-auto flex h-14 max-w-[var(--container-max)] items-center justify-between px-[var(--container-gutter)]">
-          <Link href="/" className="font-mono text-xs uppercase tracking-[0.2em] text-fg">
-            Vinea
+          <Link href="/" aria-label="Vinea — home" className="text-fg">
+            <Logo wordmark />
           </Link>
           <nav className="hidden gap-6 md:flex" aria-label="Primary">
             {links.map((l) => (

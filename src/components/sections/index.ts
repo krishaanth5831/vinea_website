@@ -3,6 +3,7 @@ export { Hero } from "./Hero";
 export { Problem } from "./Problem";
 export { Product } from "./Product";
 export { Capabilities } from "./Capabilities";
+export { Ribbon } from "./Ribbon";
 export { RaaS } from "./RaaS";
 export { Market } from "./Market";
 export { Roadmap } from "./Roadmap";

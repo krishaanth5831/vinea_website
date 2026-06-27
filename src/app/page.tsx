@@ -4,6 +4,7 @@ import {
   Problem,
   Product,
   Capabilities,
+  Ribbon,
   RaaS,
   Market,
   Roadmap,
@@ -21,6 +22,7 @@ export default function Home() {
         <Problem />
         <Product />
         <Capabilities />
+        <Ribbon />
         <RaaS />
         <Market />
         <Roadmap />

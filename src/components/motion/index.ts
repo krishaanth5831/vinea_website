@@ -12,3 +12,5 @@ export { Parallax } from "./Parallax";
 export { Magnetic } from "./Magnetic";
 export { Cursor } from "./Cursor";
 export { HeroCanvas } from "./HeroCanvas";
+export { Scramble } from "./Scramble";
+export { Marquee } from "./Marquee";
